@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Country Explorer</title>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1><i class="fas fa-globe"></i> Country Explorer</h1>
+            <input type="text" id="search" placeholder="Search for a country..." class="large-input">
+        </div>
+        <div class="header-right">
+            <button class="favorites" id="favorites-toggle">
+                <i class="fas fa-heart"></i> Favorites
+            </button>
+            <div class="auth-buttons">
+                <button class="login-btn" id="open-login">Login</button>
+                <button class="signup-btn" id="open-signup">Sign Up</button>
+            </div>
+            <div id="user-info" style="display: none;">
+                <span id="user-icon" style="display: none;">👤</span>
+                <span id="user-name-display"></span>
+                <button id="logout-button" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="filters">
+        <select id="language-filter" class="large-select">
+            <option value="">Select Language</option>
+        </select>
+        <select id="region-filter" class="large-select">
+            <option value="">Select Region</option>
+        </select>
+    </div>
+
+    <main class="main-content">
+        <div class="cards-container" id="country-list"></div>
+        <button id="show-more">Show More</button>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us</h4>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="contact-info">
+                <h4>Contact</h4>
+                <p>Email: devendrasahu23@navgurukul.org</p>
+                <p>Phone: +91 6261302047</p>
+            </div>
+        </div>
+        <p>&copy; 2024 Country Explorer. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Country Detail Modal -->
+    <div class="modal" id="country-detail">
+        <div class="modal-content">
+            <span class="close-modal" id="close-detail">&times;</span>
+            <img id="detail-flag" alt="Country Flag" class="detail-flag">
+            <h3 id="detail-name"></h3>
+            <p><strong>Capital:</strong> <span id="detail-capital"></span></p>
+            <p><strong>Region:</strong> <span id="detail-region"></span></p>
+            <p><strong>Population:</strong> <span id="detail-population"></span></p>
+            <p><strong>Area:</strong> <span id="detail-area"></span></p>
+            <p><strong>Top-Level Domain:</strong> <span id="detail-domain"></span></p>
+            <p><strong>Languages:</strong> <span id="detail-languages"></span></p>
+            <button id="favorite-button">Favorite</button>
+        </div>
+    </div>
+
+    <!-- Favorites Page -->
+    <div class="modal" id="favorite-countries-page" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" id="close-favorites">&times;</span>
+            <h2>My Favorite Countries</h2>
+            <div id="favorite-countries-list"></div>
+            <button id="back-to-home">Back to Home</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-signup-modal">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
